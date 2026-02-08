@@ -1,8 +1,8 @@
 /**
- * Service Worker for PDFCraft
+ * Service Worker for PDFRose
  */
 
-const CACHE_NAME = 'pdfcraft-cache-v1';
+const CACHE_NAME = 'PDFRose-cache-v1';
 
 self.addEventListener('install', (event) => {
     self.skipWaiting();

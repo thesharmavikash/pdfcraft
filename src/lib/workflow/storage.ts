@@ -5,7 +5,7 @@
 
 import { SavedWorkflow, WorkflowNode, WorkflowEdge } from '@/types/workflow';
 
-const STORAGE_KEY = 'pdfcraft_workflows';
+const STORAGE_KEY = 'PDFRose_workflows';
 const MAX_WORKFLOWS = 50;
 
 /**

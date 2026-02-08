@@ -1,73 +1,73 @@
-// PDFCraft Chrome Extension - Background Service Worker
+// PDFRose Chrome Extension - Background Service Worker
 
-const PDFCRAFT_URL = 'https://pdfcraft.gitu.net/en';
+const PDFRose_URL = 'https://PDFRose.gitu.net/en';
 
 // Create context menu when extension is installed
 chrome.runtime.onInstalled.addListener(() => {
     // Create main context menu item
     chrome.contextMenus.create({
-        id: 'pdfcraft-open',
-        title: 'Open with PDFCraft',
+        id: 'PDFRose-open',
+        title: 'Open with PDFRose',
         contexts: ['link', 'page']
     });
 
     // Create submenu for specific tools
     chrome.contextMenus.create({
-        id: 'pdfcraft-merge',
-        parentId: 'pdfcraft-open',
+        id: 'PDFRose-merge',
+        parentId: 'PDFRose-open',
         title: 'Merge PDFs',
         contexts: ['link', 'page']
     });
 
     chrome.contextMenus.create({
-        id: 'pdfcraft-compress',
-        parentId: 'pdfcraft-open',
+        id: 'PDFRose-compress',
+        parentId: 'PDFRose-open',
         title: 'Compress PDF',
         contexts: ['link', 'page']
     });
 
     chrome.contextMenus.create({
-        id: 'pdfcraft-convert',
-        parentId: 'pdfcraft-open',
+        id: 'PDFRose-convert',
+        parentId: 'PDFRose-open',
         title: 'Convert to PDF',
         contexts: ['link', 'page']
     });
 
     chrome.contextMenus.create({
-        id: 'pdfcraft-all-tools',
-        parentId: 'pdfcraft-open',
+        id: 'PDFRose-all-tools',
+        parentId: 'PDFRose-open',
         title: 'All Tools →',
         contexts: ['link', 'page']
     });
 
-    console.log('PDFCraft context menus created');
+    console.log('PDFRose context menus created');
 });
 
 // Handle context menu clicks
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-    let url = PDFCRAFT_URL;
+    let url = PDFRose_URL;
 
     switch (info.menuItemId) {
-        case 'pdfcraft-merge':
-            url = `${PDFCRAFT_URL}/tools/merge-pdf`;
+        case 'PDFRose-merge':
+            url = `${PDFRose_URL}/tools/merge-pdf`;
             break;
-        case 'pdfcraft-compress':
-            url = `${PDFCRAFT_URL}/tools/compress-pdf`;
+        case 'PDFRose-compress':
+            url = `${PDFRose_URL}/tools/compress-pdf`;
             break;
-        case 'pdfcraft-convert':
-            url = `${PDFCRAFT_URL}/tools/jpg-to-pdf`;
+        case 'PDFRose-convert':
+            url = `${PDFRose_URL}/tools/jpg-to-pdf`;
             break;
-        case 'pdfcraft-all-tools':
-        case 'pdfcraft-open':
-            url = PDFCRAFT_URL;
+        case 'PDFRose-all-tools':
+        case 'PDFRose-open':
+            url = PDFRose_URL;
             break;
         default:
-            url = PDFCRAFT_URL;
+            url = PDFRose_URL;
     }
 
-    // Open PDFCraft in a new tab
+    // Open PDFRose in a new tab
     chrome.tabs.create({ url: url });
 });
 
 // Log when service worker starts
-console.log('PDFCraft background service worker started');
+console.log('PDFRose background service worker started');

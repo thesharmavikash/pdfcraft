@@ -6,7 +6,7 @@
 import type { WorkflowExecutionRecord, WorkflowHistoryStorage } from '@/types/workflow-history';
 import type { WorkflowNode, WorkflowEdge } from '@/types/workflow';
 
-const STORAGE_KEY = 'pdfcraft_workflow_history';
+const STORAGE_KEY = 'PDFRose_workflow_history';
 const MAX_RECORDS = 50; // Keep last 50 executions
 
 /**
